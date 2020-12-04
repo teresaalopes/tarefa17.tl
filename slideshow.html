@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainSlideshow.css" type="text/css">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Visitare Roma</h1>
+
+    <div class="slideshow-container">
+        <div class="slides">
+          <div class="numbertext">1 / 4</div>
+          <img src="images/roma1.jpg">
+          <div class="text">Arco di Costantino</div>
+        </div>
+        <div class="slides">
+          <div class="numbertext">2 / 4</div>
+          <img src="images/roma2.jpg">
+          <div class="text">Fontana Di Trevi</div>
+        </div>
+        <div class="slides">
+          <div class="numbertext">3 / 4</div>
+          <img src="images/roma3.jpg">
+          <div class="text">Colosseo</div>
+        </div>
+        <div class="slides">
+          <div class="numbertext">4 / 4</div>
+          <img src="images/roma4.jpg">
+          <div class="text">Roma</div>
+        </div>
+      
+        <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlide(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="thisSlide(1)"></span>
+        <span class="dot" onclick="thisSlide(2)"></span>
+        <span class="dot" onclick="thisSlide(3)"></span>
+        <span class="dot" onclick="thisSlide(4)"></span>
+      </div>
+      
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function plusSlide(x) {
+            showSlides(slideIndex += x);
+        }
+    
+        function thisSlide(x) {
+            showSlides(slideIndex = x);
+        }
+    
+        function showSlides(x) {
+            var slides = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("dot");
+    
+            if (x > slides.length)
+                {slideIndex = 1}
+    
+            if (x < 1)
+                {slideIndex = slides.length;}
+    
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+    
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active", " ");
+            }
+    
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+
+            }
+    </script>
+</body>
+</html>
+
